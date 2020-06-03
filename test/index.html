@@ -10,7 +10,7 @@
 		<script data-ad-client="ca-pub-5536191614660236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	</head>
 	<body bgcolor="F1F0EC">
-	<form method="get" action="./lunch/lunch.html">
+	<form action="ThisActionIsReplacedInTheButtonOnclickEvent" method="POST" Name="MyForm" target="_blank">
 	<div id="button_div"></div>
 	<div id="button_div">
 		<center>
@@ -19,6 +19,7 @@
 			</span>
 		</center>
 	</div>
+	<div id="button_div"></div>
 	<div id="img_div">
 		<center>
 		<img id='myImg' src="icon.png">
@@ -56,9 +57,12 @@
 	<div id="button_div"></div>
 	<div id="button_div">
 		<center>
-		<form>
-			<input type="submit" value="점심 뽑기 시작" style="font-size:4vmin;">
-		</form>
+			<input type="submit" name="lunch" value="점심 뽑기 시작" style="font-size:4vmin;" OnClick="SetDestLunch()"></input>
+		</center>
+	</div>
+	<div id="button_div">
+		<center>
+			<input type="submit" name="cafe" value="카페 뽑기 시작" style="font-size:4vmin;" OnClick="SetDestCafe()"></input>
 		</center>
 	</div>
 	</form>
@@ -66,4 +70,14 @@
 	<a href="./privacy_policy.html" style="text-align: right; color: gray; font-size: 0.3em">개인정보처리방침</a>
 
 	</body>
+
+	<script LANGUAGE="JavaScript">
+		function SetDestLunch() {
+			document.forms["MyForm"].action = "./lunch/lunch.html";
+		}
+
+		function SetDestCafe() {
+			document.forms["MyForm"].action = "./cafe/cafe.html";
+		}
+	</script>
 </html>
